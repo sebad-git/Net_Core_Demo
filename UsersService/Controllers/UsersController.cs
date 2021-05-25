@@ -18,14 +18,13 @@ namespace UsersService.Controllers
         [HttpGet("")]
         public ServiceMessage Get() { return new ServiceMessage("Service Ready"); }
 
-        [HttpGet("newUser/{userName}/{password}")]
-        public ServiceMessage CreateUser(string userName, string password) {
+        [HttpPost("create")]
+        public ServiceMessage CreateUserPost([FromBody] User newUser) {
             try {
-                User user = DummyDatabase.Instance.CreateUser(userName, password);
-                return new ServiceMessage("User Created Successfully");
+                User user = DummyDatabase.Instance.CreateUser(newUser.UserName, newUser.Password);
+                return new ServiceMessage(String.Format("User {0} Created Successfully.",user.UserName));
             }
             catch (Exception e) { return new ServiceMessage(e.Message.ToString()); }
-            
         }
 
         [HttpGet("login/{userName}/{password}")]
@@ -36,6 +35,13 @@ namespace UsersService.Controllers
             serviceMessage.Message = string.Format("Welcome: {0}", user.UserName);
             return serviceMessage;
         }
+
+        /*
+         [HttpPost("test")]
+        public async Task<ActionResult<ServiceResponse>> Method([FromBody] Data data) {
+            
+        }
+         */
 
     }
 }
