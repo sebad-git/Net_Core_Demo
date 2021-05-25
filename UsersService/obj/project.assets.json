@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deneg\\Documents\\GitHub\\Test\\UsersService\\UsersService.csproj",
+      "projectUniqueName": "C:\\Users\\deneg\\Documents\\GitHub\\Net_Core_Demo\\UsersService\\UsersService.csproj",
       "projectName": "UsersService",
-      "projectPath": "C:\\Users\\deneg\\Documents\\GitHub\\Test\\UsersService\\UsersService.csproj",
+      "projectPath": "C:\\Users\\deneg\\Documents\\GitHub\\Net_Core_Demo\\UsersService\\UsersService.csproj",
       "packagesPath": "C:\\Users\\deneg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\deneg\\Documents\\GitHub\\Test\\UsersService\\obj\\",
+      "outputPath": "C:\\Users\\deneg\\Documents\\GitHub\\Net_Core_Demo\\UsersService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

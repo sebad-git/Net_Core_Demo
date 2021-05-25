@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zO4DSICGi1jSasZ4NxyVxjZFwNVnPJKkDERLzMno3xJ0p7qEpg7VHdh0tJUP9K5QQxuPzUkV0YbJ9m9TAxSfZA==",
+  "dgSpecHash": "/68tBMIutyDJcOsR7vTO0Y8t+1z2+R15ruOqQl30MT364gDItxVdiQq93wu92thBIrZYAiDo/OGpryFK0uzwiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deneg\\Documents\\GitHub\\Test\\UsersService\\UsersService.csproj",
+  "projectFilePath": "C:\\Users\\deneg\\Documents\\GitHub\\Net_Core_Demo\\UsersService\\UsersService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

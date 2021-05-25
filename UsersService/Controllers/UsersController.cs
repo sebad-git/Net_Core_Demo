@@ -16,24 +16,25 @@ namespace UsersService.Controllers
         public UsersController(ILogger<UsersController> logger) { _logger = logger; }
 
         [HttpGet("")]
-        public IEnumerable<string> Get() { yield return "Service Ready"; }
+        public ServiceMessage Get() { return new ServiceMessage("Service Ready"); }
 
         [HttpGet("newUser/{userName}/{password}")]
-        public IEnumerable<string> CreateUser(string userName, string password) {
-            string serviceMessage="";
+        public ServiceMessage CreateUser(string userName, string password) {
             try {
                 User user = DummyDatabase.Instance.CreateUser(userName, password);
-                serviceMessage = "User Created Successfully";
+                return new ServiceMessage("User Created Successfully");
             }
-            catch (Exception e) { serviceMessage = e.Message.ToString(); }
-            yield return serviceMessage;
+            catch (Exception e) { return new ServiceMessage(e.Message.ToString()); }
+            
         }
 
         [HttpGet("login/{userName}/{password}")]
-        public IEnumerable<string> Login(string userName, string password) {
+        public ServiceMessage Login(string userName, string password) {
+            ServiceMessage serviceMessage = new ServiceMessage();
             User user = DummyDatabase.Instance.GetUser(userName, password);
-            if(user==null) { yield return "Login failed."; }
-            yield return string.Format("Welcome: {0}",user.UserName);
+            if (user == null) { serviceMessage.Message = "Login failed."; return serviceMessage; }
+            serviceMessage.Message = string.Format("Welcome: {0}", user.UserName);
+            return serviceMessage;
         }
 
     }
